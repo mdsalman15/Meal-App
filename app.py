@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
-from streamlit_gsheets import GSheetConnection
+try:
+    from streamlit_gsheets import GSheetConnection
+except ImportError:
+    st.error("Library not found. Please check requirements.txt and reboot.")
 
 # Professional Page Setup
 st.set_page_config(page_title="Meal Manager Admin", layout="wide")
